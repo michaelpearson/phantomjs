@@ -308,7 +308,7 @@ function copyIntoPlace(extractedPath, targetPath) {
       var file = path.join(extractedPath, files[i])
       if (fs.statSync(file).isDirectory() && file.indexOf(helper.version) != -1) {
         console.log('Copying extracted folder', file, '->', targetPath)
-        return kew.nfcall(fs.move, file, targetPath)
+        return kew.nfcall(fs.copy, file, targetPath)
       }
     }
 
